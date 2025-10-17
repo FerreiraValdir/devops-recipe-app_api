@@ -10,8 +10,9 @@ server {
     }
 
     location / {
-        uwsgi_pass              ${APP_HOST}:${APP_PORT};
-        include                 /etc/nginx/uwsgi_params;
+        include gunicorn_headers;
+        proxy_redirect off;
+        proxy_pass https://${APP_HOST}:${APP_HOST};
         client_max_body_size    10M;
     }
 }
