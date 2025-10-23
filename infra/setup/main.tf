@@ -1,8 +1,8 @@
-terraform{
-    required_providers {
-      aws={
-        source = "hashicorp/aws"
-        version="5.23.0"
+terraform {
+  required_providers {
+    aws={
+      source = "hashicorp/aws"
+      version = "5.23.0"
       }
     }
 
@@ -10,7 +10,7 @@ terraform{
 
     backend "s3" {
       bucket = "devops-recipe-app-bu"
-      key ="tf-state-setup"
+      key = "tf-state-setup"
       region = "eu-north-1"
       encrypt = true
       dynamodb_table = "devops-recipe-app-api-tf-lock"
@@ -22,10 +22,10 @@ provider "aws" {
 
 default_tags {
   tags = {
-    Environment=terraform.workspace
+    Environmen = terraform.workspace
     Project = var.project
     contact = var.contact
-    ManageBy="Terraform/setup"
+    ManageBy= "Terraform/setup"
   }
 }
 }

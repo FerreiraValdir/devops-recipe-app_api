@@ -1,5 +1,5 @@
 variable "tf_state_bucket" {
-    description = "Name of s3 buckete in AWS for stoing TF state"
+    description = "Name of S3 bucket in AWS for stoing TF state"
     default = "devops-recipe-app-bu"
   
 }
